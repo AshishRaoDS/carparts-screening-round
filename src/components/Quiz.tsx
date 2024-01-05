@@ -50,7 +50,7 @@ const Quiz: React.FC<Props> = ({submitQuiz}) => {
         <p className='subTitle'>We keep the world moving. Come and be a part of it!</p>
         <p className="timer">Time left: {timeLeft} seconds</p>
         <div>
-          <h2 className="question-title">{questions[currentQuestion].question}</h2>
+          <h2 className="question-title">{currentQuestion + 1}.{questions[currentQuestion].question}</h2>
           {questions[currentQuestion].options.map((option) => (
             <button key={option} onClick={() => handleOptionSelect(option)} className="option-button">
               {option}

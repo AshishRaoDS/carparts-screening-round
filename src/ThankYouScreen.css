@@ -39,4 +39,12 @@
   .image {
     height: 310px;
   }
+
+  @media (max-width: 428px) {
+    .formWrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
   

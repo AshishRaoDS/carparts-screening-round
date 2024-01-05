@@ -32,6 +32,7 @@
 
   .listWrapper {
     text-align: left;
+    margin: 0 8px;
   }
   
   .listWrapper li {
