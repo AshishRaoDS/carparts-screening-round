@@ -8,7 +8,7 @@ interface Props {
 const Quiz: React.FC<Props> = ({submitQuiz}) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-    const [timeLeft, setTimeLeft] = useState(600);
+    const [timeLeft, setTimeLeft] = useState(120);
 
     useEffect(() => {
         if (timeLeft === 0) {
@@ -26,13 +26,12 @@ const Quiz: React.FC<Props> = ({submitQuiz}) => {
         newSelectedOptions[currentQuestion] = option;
         setCurrentQuestion(prevState => prevState + 1)
         setSelectedOptions(newSelectedOptions);
-        if(currentQuestion === 9) {
+        if(currentQuestion === questions.length - 1) {
             submitAnswers(newSelectedOptions)
         }
     };
 
     const submitAnswers = (allSelectedOptions: string[]) => {
-        console.log("Selected Options: ", allSelectedOptions);
         let totalScore = 0;
         allSelectedOptions.forEach((answer, index) => {
             if(questions[index].answer === answer) {
@@ -40,7 +39,6 @@ const Quiz: React.FC<Props> = ({submitQuiz}) => {
             }
         })
 
-        console.log('total Score', totalScore)
         submitQuiz(totalScore);
 
     

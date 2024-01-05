@@ -34,8 +34,6 @@ function App() {
     )
   }
 
-  console.log('template Id', import.meta.env.VITE_EMAILJS_TEMPLATE_ID)
-
   return (
     <>
       <div className="header">

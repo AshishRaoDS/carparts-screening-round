@@ -18,7 +18,6 @@ const quizStartHandler = () => {
 useEffect(() => {
     const randomId = generateRandomId();
     setQuizId(randomId)
-    console.log(randomId);
 },[])
 
   return (
@@ -27,8 +26,8 @@ useEffect(() => {
         <h1>Welcome to your screening round</h1>
         <h3 className='noteTitle'>Things to note</h3>
         <ul className='listWrapper'>
-            <li>You will be asked 20 questions.</li>
-            <li>As soon as you start the quiz, a 10 minute timer will be set in motion.</li>
+            <li>You will be asked 15 questions.</li>
+            <li>As soon as you start the quiz, a 2 minute timer will be set in motion.</li>
             <li>Quiz ends as soon as you answer all the questions or when the timer runs out.</li>
             <li>You get only one shot at the questions. After selecting an answer, you won't be able to change it.</li>
             <li>Please submit the form at the end or else the response won't be recorded.</li>
