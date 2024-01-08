@@ -4,10 +4,11 @@ import ThankYouScreen from './ThankYouScreen';
 
 interface Props {
     finalScore: number
+    userEmail: string;
     quizId: string;
-}
+  }
 
-export const SubmitResponse: React.FC<Props> = ({finalScore, quizId}) => {
+export const SubmitResponse: React.FC<Props> = ({finalScore, userEmail, quizId}) => {
     const [formSubmitted, setFormSubmitted] = useState(false)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const form = useRef<any>(null);
@@ -38,7 +39,7 @@ export const SubmitResponse: React.FC<Props> = ({finalScore, quizId}) => {
         <label className='formLabel'>Name</label>
         <input className='formInput nameInput' type="text" name="from_name" />
         <label className='formLabel'>Email</label>
-        <input className='formInput emailInput' type="email" name="from_email" />
+        <input value={userEmail} readOnly className='formInput emailInput' type="email" name="from_email" />
         <label className='formLabel'>Feed Back</label>
         <textarea className='formTextArea' name="message" />
         <input className='hiddenElement' value={finalScore} name='final_score'/>
@@ -46,7 +47,7 @@ export const SubmitResponse: React.FC<Props> = ({finalScore, quizId}) => {
         <input className='sendCta' type="submit" value="Send" />
         </form>
         <div className='imageWrapper'>
-            <img className='image' src="https://media.giphy.com/media/WoddXx7YtZeCqUD2tV/giphy.gif" alt="" />
+            <img className='image' src="https://media.giphy.com/media/WoddXx7YtZeCqUD2tV/giphy.gif" alt="Finish Line" />
         </div>
     </div>
   );

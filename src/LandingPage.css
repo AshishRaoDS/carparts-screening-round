@@ -39,6 +39,11 @@
     margin: 5px 0;
   }
 
+  .start-quiz-button:disabled {
+    background-color: grey;
+    pointer-events: none;
+  }
+  
   .start-quiz-button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -68,4 +73,11 @@
     width: 170px;
     text-align: center;
   }
-  
+ 
+  .invalidUser {
+    margin: 0;
+    margin-top: 20px;
+    color: red;
+    font-size: 18px;
+    font-weight: 500;
+  }
